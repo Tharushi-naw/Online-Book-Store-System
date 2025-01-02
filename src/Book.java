@@ -52,5 +52,15 @@ public class Book {
     public void setQuantity(int quantity){
        this.quantity = quantity;
     }
-    
+
+    //Override toString() method for displaying book details
+    @Override
+    public String toString(){
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
