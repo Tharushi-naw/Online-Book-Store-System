@@ -40,4 +40,14 @@ public class Customer {
     public void setPassword(String password){
         this.password = password;
     }
+
+    //override toString() method to display basic customer details
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
