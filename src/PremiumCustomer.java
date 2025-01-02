@@ -17,4 +17,14 @@ public class PremiumCustomer extends Customer {
     public void setDiscountRate (double discountRate){
         this.discountRate = discountRate;
     }
+
+    //override toString() method to include premium specific details
+    @Override
+    public String toString() {
+        return "PremiumCustomer{" +
+                "name='" + getName() + '\'' +
+                ", username='" + getUsername() + '\'' +
+                ", discountRate=" + discountRate +
+                '}';
+    }
 }
