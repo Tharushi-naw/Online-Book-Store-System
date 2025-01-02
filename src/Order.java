@@ -50,4 +50,15 @@ public class Order {
     public void setCustomerName(String customewrName){
         this.customerName = customerName;
     }
+
+    //override toString() method to display order details
+    @Override
+    public String toString() {
+        return "order{" +
+                "orderId=" + orderId +
+                ",bookTitle='" + bookTitle + '\'' +
+                ",quantity=" + quantity +
+                ",customerName='" + customerName + '\'' +
+                '}';
+    }
 }
