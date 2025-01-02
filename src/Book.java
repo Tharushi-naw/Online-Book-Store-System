@@ -52,4 +52,5 @@ public class Book {
     public void setQuantity(int quantity){
        this.quantity = quantity;
     }
+    
 }
