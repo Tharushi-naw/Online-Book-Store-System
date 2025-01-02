@@ -47,7 +47,7 @@ public class Order {
     }
 
     //Setter for customer name
-    public void setCustomerName(String customewrName){
+    public void setCustomerName(String customerName){
         this.customerName = customerName;
     }
 
