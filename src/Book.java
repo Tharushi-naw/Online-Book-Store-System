@@ -12,4 +12,44 @@ public class Book {
         this.price = price;
         this.quantity = quantity;
     }
+
+    //Getter for the book's title
+    public String getTitle() {
+        return title;
+    }
+
+    //setter for the book's title
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    //Getter for the book's author
+    public String getAuthor() {
+        return author;
+    }
+
+    //Setter for the book's author
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    //Getter for the book's price
+    public double getPrice() {
+        return price;
+    }
+
+    //Setter for the book's price
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    //Getter for the quantity
+    public int getQuantity(){
+        return quantity;
+    }
+
+    //Setter for the quantity
+    public void setQuantity(int quantity){
+       this.quantity = quantity;
+    }
 }
