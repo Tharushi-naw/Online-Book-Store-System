@@ -1,23 +1,28 @@
 public class Main {
     public static void main(String[] args) {
-        //Initialize bookstore and order manager
-        BookStore store = new BookStore();
+        LibraryManager manager = new LibraryManager();
 
-        //add books to the store
-        store.addBook(new Book("Java", "Doe", 49.99, 14));
-        store.addBook(new Book("Data Structures", "smith", 55.99, 4));
+        // Create some sample books
+        Book book1 = new Book("Java Programming", "John Doe", 45.99, 10);
+        Book book2 = new Book("Data Structures", "Jane Smith", 39.99, 5);
 
-        //Save books to a file
-        String filename = "books.txt";
-        store.saveBooksToFile(filename);
+        // Add books to the manager
+        manager.addBook(book1);
+        manager.addBook(book2);
 
-        //Clear the store and load books from the file
-        store.loadBooksFromFiles(filename);
+        // List all books
+        manager.listBooks();
 
-        //Display loaded books
-        System.out.println("Books in store after loading:");
-        for (Book book : store.getBooks()) {
-            System.out.println(book.getTitle() + " by " + book.getAuthor() + " - $" + book.getPrice() + " (" + book.getQuantity() + " in stock)");
+        // Search for a book
+        Book foundBook = manager.searchBook("Java Programming");
+        if (foundBook != null) {
+            System.out.println("Book found: " + foundBook);
+        } else {
+            System.out.println("Book not found.");
         }
+
+        // Remove a book
+        manager.removeBook("Java Programming");
+        manager.listBooks();
     }
 }
