@@ -1,4 +1,4 @@
-import java.util.ArrayList;s
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookStore {
@@ -15,4 +15,15 @@ public class BookStore {
         books.add(book);
     }
 
+    //method to search for a book by title
+    public Book searchBook(String title) throws BookNotFoundException{
+        for (Book book : books){
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                return book;
+            }
+        }
+
+        //Throw custom exception if the book is not found
+        throw new BookNotFoundException ("Book with title'" + title + "'not found");
+    }
 }
