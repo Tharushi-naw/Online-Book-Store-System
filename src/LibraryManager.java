@@ -21,4 +21,25 @@ public class LibraryManager {
             }
         }
     }
+
+    //Method to search for a book by title
+    public Book searchBook(String title) {
+        for (Book book : bookList){
+            if (book.getTitle().equalsIgnoreCase(title)){
+                return book;
+            }
+        }
+        return null;
+    }
+
+    //Method to remove a book by title
+    public void removeBook(String title){
+        Book book = searchBook(title);
+        if (book != null) {
+            bookList.remove(book);
+            System.out.println("Book removed successfully");
+        } else {
+            System.out.println("Book not found");
+        }
+    }
 }
