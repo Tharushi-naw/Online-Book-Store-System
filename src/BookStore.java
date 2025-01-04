@@ -33,7 +33,7 @@ public class BookStore {
     }
 
     //method to save books to a file
-    public void saveBook(String filename){
+    public void saveBooksToFile(String filename){
         try (FileWriter writer = new FileWriter(filename)) {
             for (Book book : books) {
                 //Write book details in a CSV format: title,author,price,quantity
