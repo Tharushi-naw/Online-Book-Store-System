@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        //Initialize rge bookstore and order manager
+        //Initialize bookstore and order manager
         BookStore store = new BookStore();
 
         //add books to the store
