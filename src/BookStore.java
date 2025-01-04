@@ -24,6 +24,6 @@ public class BookStore {
         }
 
         //Throw custom exception if the book is not found
-        throw new BookNotFoundException ("Book with title'" + title + "'not found");
+        throw new BookNotFoundException ("Book with title '" + title + "' not found");
     }
 }
