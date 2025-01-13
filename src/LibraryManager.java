@@ -5,7 +5,12 @@ public class LibraryManager {
     private ArrayList<Book> bookList = new ArrayList<>();
 
     //Method to add a book to the collection
-    public void addBook(Book book){
+    public void addBook(Book book) throws Exception {
+        for (Book b: bookList) {
+            if(b.getTitle().equalsIgnoreCase(book.getTitle())) {
+                throw new Exception("Book already exists!");
+            }
+        }
         bookList.add(book);
         System.out.println("Book added successfully!");
     }

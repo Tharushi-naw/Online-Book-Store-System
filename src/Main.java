@@ -6,9 +6,16 @@ public class Main {
         Book book1 = new Book("Java Programming", "John Doe", 45.99, 10);
         Book book2 = new Book("Data Structures", "Jane Smith", 39.99, 5);
 
-        // Add books to the manager
-        manager.addBook(book1);
-        manager.addBook(book2);
+        try {
+            // Add books to the manager
+            manager.addBook(book1);
+            manager.addBook(book2);
+
+            // Attempt to add a duplicate book
+            manager.addBook(book1); //throw an exception
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
 
         // List all books
         manager.listBooks();
