@@ -6,8 +6,8 @@ public class LibraryManager {
 
     //Method to add a book to the collection
     public void addBook(Book book) throws Exception {
-        for (Book b: bookList) {
-            if(b.getTitle().equalsIgnoreCase(book.getTitle())) {
+        for (Book b : bookList) {
+            if (b.getTitle().equalsIgnoreCase(book.getTitle())) {
                 throw new Exception("Book already exists!");
             }
         }
@@ -16,21 +16,21 @@ public class LibraryManager {
     }
 
     //Method to list all books
-    public void listBooks(){
-        if (bookList.isEmpty()){
+    public void listBooks() {
+        if (bookList.isEmpty()) {
             System.out.println("No books available");
         } else {
             System.out.println("Listing all books");
-            for (Book book : bookList){
+            for (Book book : bookList) {
                 System.out.println(book);
             }
         }
     }
 
     //Method to search for a book by title
-    public Book searchBook(String title) throws BookNotFoundException{
-        for (Book book : bookList){
-            if (book.getTitle().equalsIgnoreCase(title)){
+    public Book searchBook(String title) throws BookNotFoundException {
+        for (Book book : bookList) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
                 return book;
             }
         }
@@ -38,13 +38,13 @@ public class LibraryManager {
     }
 
     //Method to remove a book by title
-    public void removeBook(String title){
-        Book book = searchBook(title);
-        if (book != null) {
+    public void removeBook(String title) {
+        try {
+            Book book = searchBook(title);
             bookList.remove(book);
             System.out.println("Book removed successfully");
-        } else {
-            System.out.println("Book not found");
+        } catch (BookNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
