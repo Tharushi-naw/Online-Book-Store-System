@@ -28,13 +28,13 @@ public class LibraryManager {
     }
 
     //Method to search for a book by title
-    public Book searchBook(String title) {
+    public Book searchBook(String title) throws BookNotFoundException{
         for (Book book : bookList){
             if (book.getTitle().equalsIgnoreCase(title)){
                 return book;
             }
         }
-        return null;
+        throw new BookNotFoundException("Book with title '" + title + "'  not found. ");
     }
 
     //Method to remove a book by title
