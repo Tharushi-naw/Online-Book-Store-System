@@ -7,13 +7,13 @@ public class Main {
         Book book1 = new Book("Java Programming", "John Doe", 45.99, 10);
         Book book2 = new Book("Data Structures", "Jane Smith", 39.99, 5);
 
-        // Step 1: List all books (should be empty initially)
-        System.out.println("Step 1: Listing all books:");
+        // List all books (should be empty initially)
+        System.out.println("Listing all books:");
         manager.listBooks();
 
         try {
-            // Step 2: Add books to the manager
-            System.out.println("\nStep 2: Adding books...");
+            // Add books
+            System.out.println("\nAdding books...");
             manager.addBook(book1);
             manager.addBook(book2);
             System.out.println("Books added successfully!");
@@ -21,8 +21,8 @@ public class Main {
             System.out.println("Error while adding books: " + e.getMessage());
         }
 
-        // Step 3: Search for a book (should throw BookNotFoundException for 'Advanced Java')
-        System.out.println("\nStep 3: Searching for 'Advanced Java':");
+        // Search for a book (should throw BookNotFoundException for 'Advanced Java')
+        System.out.println("\nSearching for 'Advanced Java':");
         try {
             Book foundBook = manager.searchBook("Advanced Java");
             System.out.println("Book found: " + foundBook);
@@ -30,8 +30,28 @@ public class Main {
             System.out.println("Error: " + e.getMessage());
         }
 
-        // Step 4: List all books again to confirm added books
-        System.out.println("\nStep 4: Listing all books after adding:");
+        // List all books again to confirm added books
+        System.out.println("\nListing all books after adding:");
+        manager.listBooks();
+
+        // Remove a book
+        System.out.println("\nRemoving 'Java programming':");
+        try {
+            manager.removeBook("Java Programming"); //Removing an existing book
+        } catch (Exception e) {
+            System.out.println("Error while removing book: " + e.getMessage());
+        }
+
+        //Try to remove a non-existent book
+        System.out.println("\nAttempting to remove 'Advanced Java'");
+        try {
+            manager.removeBook("Advanced Java");  //Removing an existing book
+        } catch (Exception e) {
+            System.out.println("Error while removing book: " + e.getMessage());
+        }
+
+        //List books again to confirm removal
+        System.out.println("\nListing all books after removal: ");
         manager.listBooks();
     }
 }
